@@ -25,13 +25,8 @@ Summary: OpenStack Kuryr library
 
 
 BuildRequires:  git
-BuildRequires:  python-pbr
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
-BuildRequires:  python-testtools
-BuildRequires:  python-ddt
-BuildRequires:  python-hacking
-BuildRequires:  python-oslotest
 
 Requires:       python-ipaddress >= 1.0.7
 Requires:       python-keystoneauth1 >= 2.18.0
@@ -41,6 +36,7 @@ Requires:       python-oslo-config >= 2:3.14.0
 Requires:       python-oslo-i18n >= 2.1.0
 Requires:       python-oslo-log >= 3.11.0
 Requires:       python-oslo-utils >= 3.18.0
+Requires:       python-pbr >= 1.6
 Requires:       python-pyroute2 >= 0.4.13
 Requires:       python-six >= 1.9.0
 
@@ -50,6 +46,9 @@ OpenStack Kuryr library shared by all Kuryr sub-projects.
 %package -n python2-%{library}-tests
 Summary:    OpenStack Kuryr library tests
 Requires:   python-%{library} = %{version}-%{release}
+Requires:   python-ddt
+Requires:   python-oslotest
+Requires:   python-testtools
 
 %description -n python2-%{library}-tests
 OpenStack Kuryr library shared by all Kuryr sub-projects.
@@ -130,6 +129,7 @@ OpenStack Kuryr library shared by all Kuryr sub-projects.
 
 # Let's handle dependencies ourseleves
 rm -f requirements.txt
+rm -f test-requirements.txt
 
 %build
 %py2_build
