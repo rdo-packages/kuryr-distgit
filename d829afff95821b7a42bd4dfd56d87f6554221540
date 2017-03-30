@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_08fc103e",
+        "filename": "python-kuryr-lib.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-03-30T08:06:45Z",
+      "side": 1,
+      "message": "use python-* for all dependencies, instead of python2-*. python2-devel is the only exception, it should be kept.",
+      "range": {
+        "startLine": 31,
+        "startChar": 21,
+        "endLine": 32,
+        "endChar": 24
+      },
+      "revId": "d829afff95821b7a42bd4dfd56d87f6554221540",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_489538e3",
+        "filename": "python-kuryr-lib.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-03-30T08:06:45Z",
+      "side": 1,
+      "message": "The subpackage name will be \"python-kuryr-lib-binding-scripts\". If this is what we want, I have no objections, just checking.",
+      "revId": "d829afff95821b7a42bd4dfd56d87f6554221540",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_28f9d44d",
+        "filename": "python-kuryr-lib.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-03-30T08:06:45Z",
+      "side": 1,
+      "message": "Please change the placeholder description ;)",
+      "range": {
+        "startLine": 118,
+        "startChar": 1,
+        "endLine": 118,
+        "endChar": 26
+      },
+      "revId": "d829afff95821b7a42bd4dfd56d87f6554221540",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
