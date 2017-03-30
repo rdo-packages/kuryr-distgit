@@ -25,13 +25,12 @@ Summary: OpenStack Kuryr library
 
 
 BuildRequires:  git
-BuildRequires:  python-pbr
+BuildRequires:  python-ddt
 BuildRequires:  python2-devel
+BuildRequires:  python-oslotest
+BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-testtools
-BuildRequires:  python-ddt
-BuildRequires:  python-hacking
-BuildRequires:  python-oslotest
 
 Requires:       python-ipaddress >= 1.0.7
 Requires:       python-keystoneauth1 >= 2.18.0
@@ -50,6 +49,9 @@ OpenStack Kuryr library shared by all Kuryr sub-projects.
 %package -n python2-%{library}-tests
 Summary:    OpenStack Kuryr library tests
 Requires:   python-%{library} = %{version}-%{release}
+Requires:   python-ddt
+Requires:   python-oslotest
+Requires:   python-testtools
 
 %description -n python2-%{library}-tests
 OpenStack Kuryr library shared by all Kuryr sub-projects.
@@ -85,13 +87,12 @@ This package contains the binding scripts for different SDNs.
 Summary: OpenStack Kuryr library
 %{?python_provide:%python_provide python3-%{library}}
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-pbr
-BuildRequires:  python3-setuptools
 BuildRequires:  git
 BuildRequires:  python3-ddt
-BuildRequires:  python3-hacking
+BuildRequires:  python3-devel
 BuildRequires:  python3-oslotest
+BuildRequires:  python3-pbr
+BuildRequires:  python3-setuptools
 BuildRequires:  python3-testtools
 
 Requires:       python3-ipaddress >= 1.0.7
@@ -113,6 +114,9 @@ This package contains the Python3 version of the library
 %package -n python3-%{library}-tests
 Summary:    OpenStack Kuryr library tests
 Requires:   python3-%{library} = %{version}-%{release}
+Requires:   python3-ddt
+Requires:   python3-oslotest
+Requires:   python3-testtools
 
 %description -n python3-%{library}-tests
 OpenStack Kuryr library containing the tests for all Kuryr sub-projects
@@ -130,6 +134,7 @@ OpenStack Kuryr library shared by all Kuryr sub-projects.
 
 # Let's handle dependencies ourseleves
 rm -f requirements.txt
+rm -f test-requirements.txt
 
 %build
 %py2_build
