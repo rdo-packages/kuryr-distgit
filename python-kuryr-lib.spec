@@ -64,7 +64,7 @@ Summary:    OpenStack Kuryr library documentation
 
 BuildRequires: python-sphinx
 BuildRequires: python-reno
-BuildRequires: python-oslo-sphinx
+BuildRequires: python-openstackdocstheme
 
 %description doc
 OpenStack Kuryr library shared by all Kuryr sub-projects.
@@ -146,8 +146,9 @@ rm -f test-requirements.txt
 
 # generate html docs
 sphinx-build doc/source html
+%{__python2} setup.py build_sphinx
 # remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
+rm -rf doc/build/html/.{doctrees,buildinfo}
 
 %install
 %py2_install
@@ -174,7 +175,7 @@ rm -rf .testrepository
 
 %files doc
 %license LICENSE
-%doc html README.rst
+%doc doc/build/html README.rst
 
 %files -n kuryr-binding-scripts
 %license LICENSE
