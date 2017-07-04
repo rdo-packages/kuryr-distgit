@@ -193,3 +193,4 @@ rm -rf .testrepository
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/kuryr/commit/?id=29360fd2263a461a15b635481c884dec943cf1d7
