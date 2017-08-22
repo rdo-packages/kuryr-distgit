@@ -33,15 +33,17 @@ BuildRequires:  python-setuptools
 BuildRequires:  python-testtools
 
 Requires:       python-ipaddress >= 1.0.7
-Requires:       python-keystoneauth1 >= 2.18.0
-Requires:       python-neutronclient >= 5.1.0
+Requires:       python-keystoneauth1 >= 3.1.0
+Requires:       python-neutronclient >= 6.3.0
+Requires:       python-neutron-lib >= 1.9.0
 Requires:       python-oslo-concurrency >= 3.8.0
-Requires:       python-oslo-config >= 2:3.14.0
+Requires:       python-oslo-config >= 2:4.0.0
 Requires:       python-oslo-i18n >= 2.1.0
-Requires:       python-oslo-log >= 3.11.0
-Requires:       python-oslo-utils >= 3.18.0
-Requires:       python-pbr >= 1.6
-Requires:       python-pyroute2 >= 0.4.13
+Requires:       python-oslo-log >= 3.22.0
+Requires:       python-oslo-utils >= 3.20.0
+Requires:       python-pbr >= 2.0.0
+Requires:       python-babel >= 2.3.4
+Requires:       python-pyroute2 >= 0.4.15
 Requires:       python-six >= 1.9.0
 
 %description -n python2-%{library}
@@ -97,15 +99,17 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-testtools
 
 Requires:       python3-ipaddress >= 1.0.7
-Requires:       python3-keystonauth1 >= 2.18.0
-Requires:       python3-neutronclient >= 5.1.0
+Requires:       python3-keystonauth1 >= 3.1.0
+Requires:       python3-neutronclient >= 6.3.0
+Requires:       python3-neutron-lib >= 1.9.0
 Requires:       python3-oslo-concurrency >= 3.8.0
-Requires:       python3-oslo-config >= 2:3.14.0
+Requires:       python3-oslo-config >= 2:4.0.0
 Requires:       python3-oslo-i18n >= 2.1.0
-Requires:       python3-oslo-log >= 3.11.0
-Requires:       python3-oslo-utils >= 3.18.0
-Requires:       python3-pbr >= 1.6
-Requires:       python3-pyroute2 >= 0.4.13
+Requires:       python3-oslo-log >= 3.22.0
+Requires:       python3-oslo-utils >= 3.20.0
+Requires:       python3-pbr >= 2.0.0
+Requires:       python3-babel >= 2.3.4
+Requires:       python3-pyroute2 >= 0.4.15
 Requires:       python3-six >= 1.9.0
 
 %description -n python3-%{library}
