@@ -97,6 +97,7 @@ BuildRequires:  python3-oslotest
 BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-testtools
+BuildRequires:  openstack-macros
 
 Requires:       python3-ipaddress >= 1.0.7
 Requires:       python3-keystonauth1 >= 3.1.0
@@ -139,8 +140,7 @@ OpenStack Kuryr library shared by all Kuryr sub-projects.
 %autosetup -n %{library}-%{upstream_version} -S git
 
 # Let's handle dependencies ourseleves
-rm -f requirements.txt
-rm -f test-requirements.txt
+%py_req_cleanup
 
 %build
 %py2_build
