@@ -107,6 +107,7 @@ BuildRequires:  python3-oslotest
 BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-testtools
+
 # Required for tests
 BuildRequires:  python3-keystoneauth1
 BuildRequires:  python3-neutronclient
@@ -117,6 +118,10 @@ BuildRequires:  python3-oslo-utils
 BuildRequires:  python3-pyroute2
 
 Requires:       python3-keystoneauth1 >= 3.1.0
+
+BuildRequires:  openstack-macros
+Requires:       python3-ipaddress >= 1.0.7
+Requires:       python3-keystonauth1 >= 3.1.0
 Requires:       python3-neutronclient >= 6.3.0
 Requires:       python3-neutron-lib >= 1.9.0
 Requires:       python3-oslo-concurrency >= 3.8.0
@@ -156,8 +161,7 @@ This package contains the Python3 version of the library tests.
 %autosetup -n %{library}-%{upstream_version} -S git
 
 # Let's handle dependencies ourseleves
-rm -f requirements.txt
-rm -f test-requirements.txt
+%py_req_cleanup
 
 %build
 %py2_build
