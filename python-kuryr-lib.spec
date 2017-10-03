@@ -8,6 +8,8 @@
 %global with_python3 1
 %endif
 
+%global common_desc OpenStack Kuryr library shared by all Kuryr sub-projects.
+
 Name: python-%library
 Version: XXX
 Release: XXX
@@ -47,7 +49,7 @@ Requires:       python-pyroute2 >= 0.4.15
 Requires:       python-six >= 1.9.0
 
 %description -n python2-%{library}
-OpenStack Kuryr library shared by all Kuryr sub-projects.
+%{common_desc}
 
 %package -n python2-%{library}-tests
 Summary:    OpenStack Kuryr library tests
@@ -57,7 +59,7 @@ Requires:   python-oslotest
 Requires:   python-testtools
 
 %description -n python2-%{library}-tests
-OpenStack Kuryr library shared by all Kuryr sub-projects.
+%{common_desc}
 
 This package contains the Kuryr library test files.
 
@@ -69,7 +71,7 @@ BuildRequires: python-reno
 BuildRequires: python-openstackdocstheme
 
 %description doc
-OpenStack Kuryr library shared by all Kuryr sub-projects.
+%{common_desc}
 
 This package contains the documentation.
 
@@ -80,7 +82,7 @@ Requires: bash
 Requires: iproute
 
 %description -n kuryr-binding-scripts
-OpenStack Kuryr library shared by all Kuryr sub-projects.
+%{common_desc}
 
 This package contains the binding scripts for different SDNs.
 
@@ -113,7 +115,7 @@ Requires:       python3-pyroute2 >= 0.4.15
 Requires:       python3-six >= 1.9.0
 
 %description -n python3-%{library}
-OpenStack Kuryr library shared by all Kuryr sub-projects
+%{common_desc}
 
 This package contains the Python3 version of the library
 
@@ -133,7 +135,7 @@ This package contains the Python3 version of the library tests.
 
 
 %description
-OpenStack Kuryr library shared by all Kuryr sub-projects.
+%{common_desc}
 
 %prep
 %autosetup -n %{library}-%{upstream_version} -S git
