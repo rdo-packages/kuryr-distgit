@@ -31,6 +31,14 @@ BuildRequires:  python-oslotest
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-testtools
+# Required for tests
+BuildRequires:  python-keystoneauth1
+BuildRequires:  python-neutronclient
+BuildRequires:  python-oslo-concurrency
+BuildRequires:  python-oslo-config
+BuildRequires:  python-oslo-log
+BuildRequires:  python-oslo-utils
+BuildRequires:  python-pyroute2
 
 Requires:       python-ipaddress >= 1.0.7
 Requires:       python-keystoneauth1 >= 3.1.0
@@ -97,9 +105,16 @@ BuildRequires:  python3-oslotest
 BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-testtools
+# Required for tests
+BuildRequires:  python3-keystoneauth1
+BuildRequires:  python3-neutronclient
+BuildRequires:  python3-oslo-concurrency
+BuildRequires:  python3-oslo-config
+BuildRequires:  python3-oslo-log
+BuildRequires:  python3-oslo-utils
+BuildRequires:  python3-pyroute2
 
-Requires:       python3-ipaddress >= 1.0.7
-Requires:       python3-keystonauth1 >= 3.1.0
+Requires:       python3-keystoneauth1 >= 3.1.0
 Requires:       python3-neutronclient >= 6.3.0
 Requires:       python3-neutron-lib >= 1.9.0
 Requires:       python3-oslo-concurrency >= 3.8.0
@@ -149,8 +164,7 @@ rm -f test-requirements.txt
 %endif
 
 # generate html docs
-sphinx-build doc/source html
-%{__python2} setup.py build_sphinx
+%{__python2} setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
@@ -163,8 +177,8 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %check
 %{__python2} setup.py test
 %if 0%{?with_python3}
-%{__python3} setup.py test
 rm -rf .testrepository
+%{__python3} setup.py test
 %endif
 
 %files -n python2-%{library}
