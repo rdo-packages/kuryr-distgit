@@ -116,12 +116,9 @@ BuildRequires:  python3-oslo-config
 BuildRequires:  python3-oslo-log
 BuildRequires:  python3-oslo-utils
 BuildRequires:  python3-pyroute2
+BuildRequires:  openstack-macros
 
 Requires:       python3-keystoneauth1 >= 3.1.0
-
-BuildRequires:  openstack-macros
-Requires:       python3-ipaddress >= 1.0.7
-Requires:       python3-keystonauth1 >= 3.1.0
 Requires:       python3-neutronclient >= 6.3.0
 Requires:       python3-neutron-lib >= 1.9.0
 Requires:       python3-oslo-concurrency >= 3.8.0
