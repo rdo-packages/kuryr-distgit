@@ -1,0 +1,9 @@
+Code-Review+2: Daniel Mellado <dmellado@redhat.com>
+Code-Review+2: Luis Tomás <luis5tb@gmail.com>
+Workflow+1: Luis Tomás <luis5tb@gmail.com>
+Verified+2: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-by: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-at: Fri, 17 Nov 2017 16:39:38 +0000
+Reviewed-on: https://review.rdoproject.org/r/10560
+Project: openstack/kuryr-distgit
+Branch: refs/heads/rpm-master
