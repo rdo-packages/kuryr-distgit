@@ -21,12 +21,14 @@ Source0:    https://tarballs.openstack.org/%{project}/%{library}-%{upstream_vers
 
 BuildArch: noarch
 
+BuildRequires:  git
+BuildRequires:  openstack-macros
+
 %package -n python2-%{library}
 Summary: OpenStack Kuryr library
 %{?python_provide:%python_provide python2-%{library}}
 
 
-BuildRequires:  git
 BuildRequires:  python-ddt
 BuildRequires:  python2-devel
 BuildRequires:  python-oslotest
@@ -116,7 +118,6 @@ BuildRequires:  python3-oslo-config
 BuildRequires:  python3-oslo-log
 BuildRequires:  python3-oslo-utils
 BuildRequires:  python3-pyroute2
-BuildRequires:  openstack-macros
 
 Requires:       python3-keystoneauth1 >= 3.1.0
 Requires:       python3-neutronclient >= 6.3.0
