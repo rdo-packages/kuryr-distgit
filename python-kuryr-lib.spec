@@ -29,44 +29,48 @@ Summary: OpenStack Kuryr library
 %{?python_provide:%python_provide python2-%{library}}
 
 
-BuildRequires:  python-ddt
+BuildRequires:  python2-ddt
 BuildRequires:  python2-devel
-BuildRequires:  python-oslotest
-BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
-BuildRequires:  python-testtools
+BuildRequires:  python2-oslotest
+BuildRequires:  python2-pbr
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-testtools
 # Required for tests
-BuildRequires:  python-keystoneauth1
-BuildRequires:  python-neutronclient
-BuildRequires:  python-oslo-concurrency
-BuildRequires:  python-oslo-config
-BuildRequires:  python-oslo-log
-BuildRequires:  python-oslo-utils
-BuildRequires:  python-pyroute2
+BuildRequires:  python2-keystoneauth1
+BuildRequires:  python2-neutronclient
+BuildRequires:  python2-oslo-concurrency
+BuildRequires:  python2-oslo-config
+BuildRequires:  python2-oslo-log
+BuildRequires:  python2-oslo-utils
+BuildRequires:  python2-pyroute2
 
-Requires:       python-ipaddress >= 1.0.7
-Requires:       python-keystoneauth1 >= 3.1.0
-Requires:       python-neutronclient >= 6.3.0
-Requires:       python-neutron-lib >= 1.9.0
-Requires:       python-oslo-concurrency >= 3.8.0
-Requires:       python-oslo-config >= 2:4.0.0
-Requires:       python-oslo-i18n >= 2.1.0
-Requires:       python-oslo-log >= 3.22.0
-Requires:       python-oslo-utils >= 3.20.0
-Requires:       python-pbr >= 2.0.0
-Requires:       python-babel >= 2.3.4
-Requires:       python-pyroute2 >= 0.4.15
-Requires:       python-six >= 1.9.0
+Requires:       python2-keystoneauth1 >= 3.2.0
+Requires:       python2-neutronclient >= 6.3.0
+Requires:       python2-neutron-lib >= 1.10.0
+Requires:       python2-oslo-concurrency >= 3.20.0
+Requires:       python2-oslo-config >= 2:4.0.0
+Requires:       python2-oslo-i18n >= 3.15.3
+Requires:       python2-oslo-log >= 3.30.0
+Requires:       python2-oslo-utils >= 3.28.0
+Requires:       python2-pbr >= 2.0.0
+Requires:       python2-babel >= 2.3.4
+Requires:       python2-pyroute2 >= 0.4.21
+Requires:       python2-six >= 1.9.0
+%if 0%{?fedora} || 0%{?rhel} > 7
+Requires:       python2-ipaddress >= 1.0.16
+%else
+Requires:       python-ipaddress >= 1.0.16
+%endif
 
 %description -n python2-%{library}
 %{common_desc}
 
 %package -n python2-%{library}-tests
 Summary:    OpenStack Kuryr library tests
-Requires:   python-%{library} = %{version}-%{release}
-Requires:   python-ddt
-Requires:   python-oslotest
-Requires:   python-testtools
+Requires:   python2-%{library} = %{version}-%{release}
+Requires:   python2-ddt
+Requires:   python2-oslotest
+Requires:   python2-testtools
 
 %description -n python2-%{library}-tests
 %{common_desc}
@@ -76,9 +80,9 @@ This package contains the Kuryr library test files.
 %package doc
 Summary:    OpenStack Kuryr library documentation
 
-BuildRequires: python-sphinx
-BuildRequires: python-reno
-BuildRequires: python-openstackdocstheme
+BuildRequires: python2-sphinx
+BuildRequires: python2-reno
+BuildRequires: python2-openstackdocstheme
 
 %description doc
 %{common_desc}
@@ -102,7 +106,6 @@ This package contains the binding scripts for different SDNs.
 Summary: OpenStack Kuryr library
 %{?python_provide:%python_provide python3-%{library}}
 
-BuildRequires:  git
 BuildRequires:  python3-ddt
 BuildRequires:  python3-devel
 BuildRequires:  python3-oslotest
@@ -119,17 +122,17 @@ BuildRequires:  python3-oslo-log
 BuildRequires:  python3-oslo-utils
 BuildRequires:  python3-pyroute2
 
-Requires:       python3-keystoneauth1 >= 3.1.0
+Requires:       python3-keystoneauth1 >= 3.2.0
 Requires:       python3-neutronclient >= 6.3.0
-Requires:       python3-neutron-lib >= 1.9.0
-Requires:       python3-oslo-concurrency >= 3.8.0
+Requires:       python3-neutron-lib >= 1.10.0
+Requires:       python3-oslo-concurrency >= 3.20.0
 Requires:       python3-oslo-config >= 2:4.0.0
-Requires:       python3-oslo-i18n >= 2.1.0
-Requires:       python3-oslo-log >= 3.22.0
-Requires:       python3-oslo-utils >= 3.20.0
+Requires:       python3-oslo-i18n >= 3.15.3
+Requires:       python3-oslo-log >= 3.30.0
+Requires:       python3-oslo-utils >= 3.28.0
 Requires:       python3-pbr >= 2.0.0
 Requires:       python3-babel >= 2.3.4
-Requires:       python3-pyroute2 >= 0.4.15
+Requires:       python3-pyroute2 >= 0.4.21
 Requires:       python3-six >= 1.9.0
 
 %description -n python3-%{library}
