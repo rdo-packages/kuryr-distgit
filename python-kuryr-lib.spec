@@ -44,18 +44,18 @@ BuildRequires:  python2-oslo-log
 BuildRequires:  python2-oslo-utils
 BuildRequires:  python2-pyroute2
 
-Requires:       python2-keystoneauth1 >= 3.2.0
-Requires:       python2-neutronclient >= 6.3.0
-Requires:       python2-neutron-lib >= 1.10.0
-Requires:       python2-oslo-concurrency >= 3.20.0
-Requires:       python2-oslo-config >= 2:4.0.0
+Requires:       python2-keystoneauth1 >= 3.4.0
+Requires:       python2-neutronclient >= 6.7.0
+Requires:       python2-neutron-lib >= 1.13.0
+Requires:       python2-oslo-concurrency >= 3.25.0
+Requires:       python2-oslo-config >= 2:5.2.0
 Requires:       python2-oslo-i18n >= 3.15.3
-Requires:       python2-oslo-log >= 3.30.0
-Requires:       python2-oslo-utils >= 3.28.0
+Requires:       python2-oslo-log >= 3.36.0
+Requires:       python2-oslo-utils >= 3.33.0
 Requires:       python2-pbr >= 2.0.0
 Requires:       python2-babel >= 2.3.4
 Requires:       python2-pyroute2 >= 0.4.21
-Requires:       python2-six >= 1.9.0
+Requires:       python2-six >= 1.10.0
 %if 0%{?fedora} || 0%{?rhel} > 7
 Requires:       python2-ipaddress >= 1.0.16
 %else
@@ -122,18 +122,18 @@ BuildRequires:  python3-oslo-log
 BuildRequires:  python3-oslo-utils
 BuildRequires:  python3-pyroute2
 
-Requires:       python3-keystoneauth1 >= 3.2.0
-Requires:       python3-neutronclient >= 6.3.0
-Requires:       python3-neutron-lib >= 1.10.0
-Requires:       python3-oslo-concurrency >= 3.20.0
-Requires:       python3-oslo-config >= 2:4.0.0
+Requires:       python3-keystoneauth1 >= 3.4.0
+Requires:       python3-neutronclient >= 6.7.0
+Requires:       python3-neutron-lib >= 1.13.0
+Requires:       python3-oslo-concurrency >= 3.25.0
+Requires:       python3-oslo-config >= 2:5.2.0
 Requires:       python3-oslo-i18n >= 3.15.3
-Requires:       python3-oslo-log >= 3.30.0
-Requires:       python3-oslo-utils >= 3.28.0
+Requires:       python3-oslo-log >= 3.36.0
+Requires:       python3-oslo-utils >= 3.33.0
 Requires:       python3-pbr >= 2.0.0
 Requires:       python3-babel >= 2.3.4
 Requires:       python3-pyroute2 >= 0.4.21
-Requires:       python3-six >= 1.9.0
+Requires:       python3-six >= 1.10.0
 
 %description -n python3-%{library}
 %{common_desc}
