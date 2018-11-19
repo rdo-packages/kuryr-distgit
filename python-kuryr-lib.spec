@@ -150,3 +150,4 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %{_libexecdir}/kuryr
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/kuryr/commit/?id=d75eaff065f876383ff3aedf6ef53bb26522f05c
