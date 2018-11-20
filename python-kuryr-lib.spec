@@ -49,6 +49,7 @@ BuildRequires:  python%{pyver}-oslo-concurrency
 BuildRequires:  python%{pyver}-oslo-config
 BuildRequires:  python%{pyver}-oslo-log
 BuildRequires:  python%{pyver}-oslo-utils
+BuildRequires:  python%{pyver}-oslo-upgradecheck
 BuildRequires:  python%{pyver}-pyroute2
 
 Requires:       python%{pyver}-keystoneauth1 >= 3.4.0
@@ -59,6 +60,7 @@ Requires:       python%{pyver}-oslo-config >= 2:5.2.0
 Requires:       python%{pyver}-oslo-i18n >= 3.15.3
 Requires:       python%{pyver}-oslo-log >= 3.36.0
 Requires:       python%{pyver}-oslo-utils >= 3.33.0
+Requires:       python%{pyver}-oslo-upgradecheck
 Requires:       python%{pyver}-pbr >= 2.0.0
 Requires:       python%{pyver}-babel >= 2.3.4
 Requires:       python%{pyver}-pyroute2 >= 0.4.21
@@ -133,6 +135,7 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 
 %files -n python%{pyver}-%{library}
 %license LICENSE
+%{_bindir}/%{project}-status
 %{pyver_sitelib}/%{project}
 %{pyver_sitelib}/%{egg}-*.egg-info
 %exclude %{pyver_sitelib}/%{project}/tests
