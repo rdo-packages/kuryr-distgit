@@ -10,6 +10,7 @@
 %global pyver_build %py%{pyver}_build
 # End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%global with_doc 1
 
 %global project kuryr
 %global library kuryr-lib
@@ -86,6 +87,7 @@ Requires:   python%{pyver}-testtools
 
 This package contains the Kuryr library test files.
 
+%if 0%{?with_doc}
 %package doc
 Summary:    OpenStack Kuryr library documentation
 
@@ -97,6 +99,7 @@ BuildRequires: python%{pyver}-openstackdocstheme
 %{common_desc}
 
 This package contains the documentation.
+%endif
 
 %package -n kuryr-binding-scripts
 Summary:    OpenStack Kuryr binding scripts for SDNs
@@ -121,11 +124,13 @@ This package contains the binding scripts for different SDNs.
 %build
 %{pyver_build}
 
+%if 0%{?with_doc}
 # generate html docs
 export PYTHONPATH=.
 sphinx-build-%{pyver} -b html doc/source doc/build/html
 # remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
 
 %install
 %{pyver_install}
@@ -144,9 +149,11 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %license LICENSE
 %{pyver_sitelib}/%{project}/tests
 
+%if 0%{?with_doc}
 %files doc
 %license LICENSE
 %doc doc/build/html README.rst
+%endif
 
 %files -n kuryr-binding-scripts
 %license LICENSE
