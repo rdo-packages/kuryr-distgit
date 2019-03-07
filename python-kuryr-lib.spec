@@ -61,7 +61,7 @@ Requires:       python%{pyver}-oslo-config >= 2:5.2.0
 Requires:       python%{pyver}-oslo-i18n >= 3.15.3
 Requires:       python%{pyver}-oslo-log >= 3.36.0
 Requires:       python%{pyver}-oslo-utils >= 3.33.0
-Requires:       python%{pyver}-oslo-upgradecheck
+Requires:       python%{pyver}-oslo-upgradecheck >= 0.1.0
 Requires:       python%{pyver}-pbr >= 2.0.0
 Requires:       python%{pyver}-babel >= 2.3.4
 Requires:       python%{pyver}-pyroute2 >= 0.4.21
