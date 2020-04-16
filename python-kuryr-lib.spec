@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc 1
 
@@ -32,57 +21,53 @@ BuildArch: noarch
 BuildRequires:  git
 BuildRequires:  openstack-macros
 
-%package -n python%{pyver}-%{library}
+%package -n python3-%{library}
 Summary: OpenStack Kuryr library
-%{?python_provide:%python_provide python%{pyver}-%{library}}
+%{?python_provide:%python_provide python3-%{library}}
 
 
-BuildRequires:  python%{pyver}-ddt
-BuildRequires:  python%{pyver}-devel
-BuildRequires:  python%{pyver}-oslotest
-BuildRequires:  python%{pyver}-pbr
-BuildRequires:  python%{pyver}-setuptools
-BuildRequires:  python%{pyver}-testtools
+BuildRequires:  python3-ddt
+BuildRequires:  python3-devel
+BuildRequires:  python3-oslotest
+BuildRequires:  python3-pbr
+BuildRequires:  python3-setuptools
+BuildRequires:  python3-testtools
 # Required for tests
-BuildRequires:  python%{pyver}-keystoneauth1
-BuildRequires:  python%{pyver}-neutronclient
-BuildRequires:  python%{pyver}-oslo-concurrency
-BuildRequires:  python%{pyver}-oslo-config
-BuildRequires:  python%{pyver}-oslo-log
-BuildRequires:  python%{pyver}-oslo-utils
-BuildRequires:  python%{pyver}-oslo-upgradecheck
-BuildRequires:  python%{pyver}-pyroute2
+BuildRequires:  python3-keystoneauth1
+BuildRequires:  python3-neutronclient
+BuildRequires:  python3-oslo-concurrency
+BuildRequires:  python3-oslo-config
+BuildRequires:  python3-oslo-log
+BuildRequires:  python3-oslo-utils
+BuildRequires:  python3-oslo-upgradecheck
+BuildRequires:  python3-pyroute2
 
-Requires:       python%{pyver}-keystoneauth1 >= 3.4.0
-Requires:       python%{pyver}-neutronclient >= 6.7.0
-Requires:       python%{pyver}-neutron-lib >= 1.13.0
-Requires:       python%{pyver}-oslo-concurrency >= 3.25.0
-Requires:       python%{pyver}-oslo-config >= 2:5.2.0
-Requires:       python%{pyver}-oslo-i18n >= 3.15.3
-Requires:       python%{pyver}-oslo-log >= 3.36.0
-Requires:       python%{pyver}-oslo-utils >= 3.33.0
-Requires:       python%{pyver}-oslo-upgradecheck >= 0.1.0
-Requires:       python%{pyver}-pbr >= 2.0.0
-Requires:       python%{pyver}-babel >= 2.3.4
-Requires:       python%{pyver}-pyroute2 >= 0.4.21
-Requires:       python%{pyver}-six >= 1.10.0
+Requires:       python3-keystoneauth1 >= 3.4.0
+Requires:       python3-neutronclient >= 6.7.0
+Requires:       python3-neutron-lib >= 1.13.0
+Requires:       python3-oslo-concurrency >= 3.25.0
+Requires:       python3-oslo-config >= 2:5.2.0
+Requires:       python3-oslo-i18n >= 3.15.3
+Requires:       python3-oslo-log >= 3.36.0
+Requires:       python3-oslo-utils >= 3.33.0
+Requires:       python3-oslo-upgradecheck >= 0.1.0
+Requires:       python3-pbr >= 2.0.0
+Requires:       python3-babel >= 2.3.4
+Requires:       python3-pyroute2 >= 0.4.21
+Requires:       python3-six >= 1.10.0
 
-# Handle python2 exception
-%if %{pyver} == 2
-Requires:       python-ipaddress >= 1.0.16
-%endif
 
-%description -n python%{pyver}-%{library}
+%description -n python3-%{library}
 %{common_desc}
 
-%package -n python%{pyver}-%{library}-tests
+%package -n python3-%{library}-tests
 Summary:    OpenStack Kuryr library tests
-Requires:   python%{pyver}-%{library} = %{version}-%{release}
-Requires:   python%{pyver}-ddt
-Requires:   python%{pyver}-oslotest
-Requires:   python%{pyver}-testtools
+Requires:   python3-%{library} = %{version}-%{release}
+Requires:   python3-ddt
+Requires:   python3-oslotest
+Requires:   python3-testtools
 
-%description -n python%{pyver}-%{library}-tests
+%description -n python3-%{library}-tests
 %{common_desc}
 
 This package contains the Kuryr library test files.
@@ -91,9 +76,9 @@ This package contains the Kuryr library test files.
 %package doc
 Summary:    OpenStack Kuryr library documentation
 
-BuildRequires: python%{pyver}-sphinx
-BuildRequires: python%{pyver}-reno
-BuildRequires: python%{pyver}-openstackdocstheme
+BuildRequires: python3-sphinx
+BuildRequires: python3-reno
+BuildRequires: python3-openstackdocstheme
 
 %description doc
 %{common_desc}
@@ -122,32 +107,32 @@ This package contains the binding scripts for different SDNs.
 %py_req_cleanup
 
 %build
-%{pyver_build}
+%{py3_build}
 
 %if 0%{?with_doc}
 # generate html docs
 export PYTHONPATH=.
-sphinx-build-%{pyver} -b html doc/source doc/build/html
-# remove the sphinx-build-%{pyver} leftovers
+sphinx-build-3 -b html doc/source doc/build/html
+# remove the sphinx-build-3 leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
-%{pyver_install}
+%{py3_install}
 
 %check
-%{pyver_bin} setup.py test
+%{__python3} setup.py test
 
-%files -n python%{pyver}-%{library}
+%files -n python3-%{library}
 %license LICENSE
 %{_bindir}/%{project}-status
-%{pyver_sitelib}/%{project}
-%{pyver_sitelib}/%{egg}-*.egg-info
-%exclude %{pyver_sitelib}/%{project}/tests
+%{python3_sitelib}/%{project}
+%{python3_sitelib}/%{egg}-*.egg-info
+%exclude %{python3_sitelib}/%{project}/tests
 
-%files -n python%{pyver}-%{library}-tests
+%files -n python3-%{library}-tests
 %license LICENSE
-%{pyver_sitelib}/%{project}/tests
+%{python3_sitelib}/%{project}/tests
 
 %if 0%{?with_doc}
 %files doc
