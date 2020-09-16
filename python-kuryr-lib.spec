@@ -53,8 +53,7 @@ Requires:       python3-oslo-utils >= 3.33.0
 Requires:       python3-oslo-upgradecheck >= 0.1.0
 Requires:       python3-pbr >= 2.0.0
 Requires:       python3-babel >= 2.3.4
-Requires:       python3-pyroute2 >= 0.4.21
-Requires:       python3-six >= 1.10.0
+Requires:       python3-pyroute2 >= 0.5.6
 
 
 %description -n python3-%{library}
