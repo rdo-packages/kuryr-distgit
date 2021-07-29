@@ -8,7 +8,7 @@
 %global common_desc OpenStack Kuryr library shared by all Kuryr sub-projects.
 
 Name: python-%library
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: OpenStack Kuryr library
 License:    ASL 2.0
@@ -145,6 +145,9 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %{_libexecdir}/kuryr
 
 %changelog
+* Thu Jul 29 2021 RDO <dev@lists.rdoproject.org> 2.0.1-1
+- Update to 2.0.1
+
 * Mon Apr 27 2020 RDO <dev@lists.rdoproject.org> 2.0.0-1
 - Update to 2.0.0
 
