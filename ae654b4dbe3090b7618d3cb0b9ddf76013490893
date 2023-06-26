@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62fb8292_7575cf1d",
+        "filename": "python-kuryr-lib.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-26T12:50:00Z",
+      "side": 0,
+      "message": "We need to keep thoses lines",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 29
+      },
+      "revId": "ae654b4dbe3090b7618d3cb0b9ddf76013490893",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
