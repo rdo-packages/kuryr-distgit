@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b16a271_ef9e9f25",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-06-27T08:10:04Z",
+      "side": 1,
+      "message": "FTR this is adding quite many BRs mostly because of adding runtime reqs, specially coming from python3-neutron-lib. However this should not be a problem and it\u0027s correct.",
+      "revId": "de4714b68639091a24bfe7c2564ce1c02414be86",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
