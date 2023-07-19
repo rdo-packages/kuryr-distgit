@@ -163,3 +163,4 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 * Fri Mar 12 2021 RDO <dev@lists.rdoproject.org> 2.3.0-1
 - Update to 2.3.0
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/kuryr/commit/ab0929857feba2b498b90df6400bf80f1d68489f
